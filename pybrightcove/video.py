@@ -412,27 +412,27 @@ class Video(object):
         object.
         """
         self.raw_data = data
-        self.creation_date = _convert_tstamp(data['creationDate'])
-        self.economics = data['economics']
-        self.id = data['id']
-        self.last_modified_date = _convert_tstamp(data['lastModifiedDate'])
-        self.length = data['length']
-        self.link_text = data['linkText']
-        self.link_url = data['linkURL']
-        self.long_description = data['longDescription']
-        self.name = data['name']
-        self.plays_total = data['playsTotal']
-        self.plays_trailing_week = data['playsTrailingWeek']
-        self.published_date = _convert_tstamp(data['publishedDate'])
+        self.creation_date = _convert_tstamp(data.get('creationDate'))
+        self.economics = data.get('economics')
+        self.id = data.get('id')
+        self.last_modified_date = _convert_tstamp(data.get('lastModifiedDate'))
+        self.length = data.get('length')
+        self.link_text = data.get('linkText')
+        self.link_url = data.get('linkURL')
+        self.long_description = data.get('longDescription')
+        self.name = data.get('name')
+        self.plays_total = data.get('playsTotal')
+        self.plays_trailing_week = data.get('playsTrailingWeek')
+        self.published_date = _convert_tstamp(data.get('publishedDate'))
         self.start_date = _convert_tstamp(data.get('startDate', None))
         self.end_date = _convert_tstamp(data.get('endDate', None))
-        self.reference_id = data['referenceId']
-        self.short_description = data['shortDescription']
+        self.reference_id = data.get('referenceId')
+        self.short_description = data.get('shortDescription')
         self.tags = []
-        for tag in data['tags']:
+        for tag in data.get('tags', []):
             self.tags.append(tag)
-        self.thumbnail_url = data['thumbnailURL']
-        self.video_still_url = data['videoStillURL']
+        self.thumbnail_url = data.get('thumbnailURL')
+        self.video_still_url = data.get('videoStillURL')
 
     def __setattr__(self, name, value):
         msg = None
@@ -465,7 +465,7 @@ class Video(object):
             if msg:
                 raise exceptions.PyBrightcoveError(msg)
         return super(Video, self).__setattr__(name, value)
-    
+
     def get_custom_metadata(self):
         """
         Fetches custom metadta for an already exisiting Video.

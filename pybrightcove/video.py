@@ -290,9 +290,6 @@ class Video(object):
                 self._find_video()
             elif data:
                 self._load(data)
-            else:
-                msg = "Invalid parameters for Video."
-                raise exceptions.PyBrightcoveError(msg)
 
     def _find_video(self):
         """

@@ -208,7 +208,7 @@ class IncompatibleValueError(BrightcoveError):
             The reference ID is already in use in the destination account.
             Advertising must be enabled on all accounts, or disabled on all
                 accounts."""
-    code = 35
+    code = 305
 
 
 class FileFormatError(BrightcoveError):

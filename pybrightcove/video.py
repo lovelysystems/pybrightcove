@@ -79,11 +79,11 @@ class Image(object):
         self.display_name = kwargs.get('display_name', None)
 
         if data:
-            self.id = data['id']
-            self.reference_id = data['referenceId']
-            self.type = data['type']
-            self.remote_url = data["remoteUrl"]
-            self.display_name = data["displayName"]
+            self.id = data.get('id')
+            self.reference_id = data.get('referenceId')
+            self.type = data.get('type')
+            self.remote_url = data.get("remoteUrl")
+            self.display_name = data.get("displayName")
 
     def to_dict(self):
         """

@@ -143,7 +143,7 @@ class FTPConnection(Connection):
         minidom.parseString(manifest)
 
         ## Record manifest
-        fpno, fname = tempfile.mkstemp(suffix=".xml", 
+        fpno, fname = tempfile.mkstemp(suffix=".xml",
             prefix="pybrightcove-manifest")
         fp_out = os.fdopen(fpno, 'wb')
         fp_out.write(manifest)

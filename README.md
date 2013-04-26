@@ -1,3 +1,10 @@
+# An adapted version with the following features:
+
+ - allow to setup a Video instance with data
+ - more robust data loading if fields are missing in Video and Image class
+ - no longer depend on simplejson
+
+
 # Introduction
 
 The purpose of this library is to wrap up all the communication details 

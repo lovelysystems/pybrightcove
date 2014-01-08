@@ -25,7 +25,7 @@ pybrightcove is a simple wrapper around the Brightcove Media API
 #VERSION = (1, 3, 7, "f") # , "a", 1) # following PEP 386
 #DEV_N = 1
 
-VERSION = (1, 3, 7, "ls", 3)
+VERSION = (1, 3, 7, "ls", 4)
 DEV_N = 0
 
 

@@ -562,11 +562,14 @@ class Video(object):
                 cascade=cascade, delete_shares=delete_shares)
             self.id = None ## Prevent more activity on this video id
 
-    def get_upload_status(self):
+   def get_upload_status(self, reference_id=None):
         """
         Get the status of the video that has been uploaded.
         """
-        if self.id:
+        if reference_id:
+            return self.connection.post('get_upload_status',
+                                        reference_id=reference_id)
+        elif self.id:
             return self.connection.post('get_upload_status', video_id=self.id)
 
     def share(self, accounts):
